@@ -1,8 +1,29 @@
 version: '3.4'
 
 services:
-  organization.feed.web:
+  web:
     image: ${DOCKER_REGISTRY-}organizationfeedweb
     build:
       context: .
       dockerfile: src/Organization.Feed.Web/Dockerfile
+    networks:
+      - sql
+    depends_on:
+      - sql
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd
+    ports:
+      - 1433:1433
+    volumes:
+      - sql:/var/opt/mssql
+    networks:
+      sql:
+        aliases:
+          - sqlserver
+volumes:
+  sql:
+networks:
+  sql:
