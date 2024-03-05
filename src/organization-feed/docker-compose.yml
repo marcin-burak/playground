@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  organization.feed.web:
+    image: ${DOCKER_REGISTRY-}organizationfeedweb
+    build:
+      context: .
+      dockerfile: src/Organization.Feed.Web/Dockerfile
