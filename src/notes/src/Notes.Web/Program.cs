@@ -1,7 +1,12 @@
+using Notes.Web.Features;
+using Notes.Web.Infrastructure.Mongo;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .AddMongo()
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -12,5 +17,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapEndpoints();
 
 app.Run();

@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  web:
+    image: ${DOCKER_REGISTRY-}notesweb
+    build:
+      context: .
+      dockerfile: src/Notes.Web/Dockerfile
+    environment:
+      - Mongo__Connection=mongodb://localhost:27017
+      - Mongo__Database=Application
+    depends_on:
+      - mongo
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27017:27017

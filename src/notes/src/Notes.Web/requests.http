@@ -1,0 +1,9 @@
+﻿@baseurl=https://localhost:53454/api/v1
+
+POST {{baseurl}}/notes
+Content-Type: application/json
+
+{
+  "title": "Title",
+  "content": "Content"
+}
