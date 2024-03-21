@@ -5,10 +5,8 @@ namespace Notes.Web.Features.Notes;
 
 internal static partial class NotesEndpoints
 {
-    public static async Task<IResult> CreateNote(CreateNoteRequest request, IMongoCollection<Note> notesCollection, IMongoClient client, CancellationToken cancellationToken)
+    public static async Task<IResult> CreateNote(CreateNoteRequest request, IMongoCollection<Note> notesCollection, CancellationToken cancellationToken)
     {
-        await client.ListDatabaseNamesAsync(cancellationToken);
-
         Note note = new()
         {
             Title = request.Title,
