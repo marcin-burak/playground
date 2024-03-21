@@ -1,4 +1,4 @@
-﻿@baseurl=https://localhost:53454/api/v1
+﻿@baseurl=https://localhost:5000/api/v1
 
 POST {{baseurl}}/notes
 Content-Type: application/json
