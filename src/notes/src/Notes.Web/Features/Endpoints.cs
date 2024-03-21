@@ -10,6 +10,7 @@ internal static class Endpoints
 
         var notes = group.MapGroup("notes");
         notes.MapPost("", NotesEndpoints.CreateNote);
+        notes.MapPost("batch-generate", NotesEndpoints.BatchGenerateNotes);
         notes.MapGet("", NotesEndpoints.ListNotes);
 
         return app;

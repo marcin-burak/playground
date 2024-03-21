@@ -10,4 +10,13 @@ Content-Type: application/json
 
 ###
 
+POST {{baseurl}}/notes/batch-generate
+Content-Type: application/json
+
+{
+  "amount": 1000
+}
+
+###
+
 GET {{baseurl}}/notes
