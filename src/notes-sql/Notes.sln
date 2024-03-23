@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F160EBC-548
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Web", "src\Notes.Web\Notes.Web.csproj", "{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{703A83C7-ADA8-4482-8B12-E4E711096410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Web.Tests", "test\Notes.Web.Tests\Notes.Web.Tests.csproj", "{D23B0238-B59F-4132-92C4-EFA5155D5926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +23,22 @@ Global
 		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23B0238-B59F-4132-92C4-EFA5155D5926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23B0238-B59F-4132-92C4-EFA5155D5926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23B0238-B59F-4132-92C4-EFA5155D5926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23B0238-B59F-4132-92C4-EFA5155D5926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B} = {5F160EBC-5482-426E-A15C-423C77C4FE8E}
+		{A4BA01E5-B852-4F42-AC10-4FF4AAD856B9} = {5F160EBC-5482-426E-A15C-423C77C4FE8E}
+		{D23B0238-B59F-4132-92C4-EFA5155D5926} = {703A83C7-ADA8-4482-8B12-E4E711096410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D5556D1-5DEE-4814-AEBD-C478EB38D63F}

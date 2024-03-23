@@ -1,7 +1,13 @@
+using Notes.Web.Infrastructure.SqlServer;
+using Notes.Web.Initialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .AddSqlServerConfiguration(builder.Configuration)
+    .AddInitialization()
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -12,5 +18,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+await Initialize.TryInitialize(app.Services, CancellationToken.None);
 
 app.Run();
