@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F160EBC-5482-426E-A15C-423C77C4FE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Web", "src\Notes.Web\Notes.Web.csproj", "{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DAE26DD-DAE4-4A23-9082-1DDE8ABFD70B} = {5F160EBC-5482-426E-A15C-423C77C4FE8E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D5556D1-5DEE-4814-AEBD-C478EB38D63F}
+	EndGlobalSection
+EndGlobal
