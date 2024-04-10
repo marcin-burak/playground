@@ -1,23 +1,20 @@
-﻿using Microsoft.Extensions.Options;
+﻿using FluentValidation;
+using Notes.Web.Dependencies.FluentValidation;
 
 namespace Notes.Web.Infrastructure.SqlServer;
 
 public sealed class SqlServerOptions
 {
-    public required string ConnectionString { get; init; } = string.Empty;
+    public string ConnectionString { get; set; } = string.Empty;
 }
 
-public sealed class SqlServerOptionsValidation : IValidateOptions<SqlServerOptions>
+public sealed class SqlServerOptionsValidator : OptionsValidator<SqlServerOptions>
 {
-    public ValidateOptionsResult Validate(string? name, SqlServerOptions options)
+    public SqlServerOptionsValidator() : base()
     {
-        ArgumentNullException.ThrowIfNull(options);
-
-        if (string.IsNullOrWhiteSpace(options.ConnectionString))
-        {
-            return ValidateOptionsResult.Fail("SQL Server connection string is required.");
-        }
-
-        return ValidateOptionsResult.Success;
+        RuleFor(options => options.ConnectionString)
+            .NotEmpty()
+            .Trimmed()
+            .SqlServerConnectionString();
     }
 }

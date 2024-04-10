@@ -1,12 +1,16 @@
-﻿using Notes.Web.Initialization;
+﻿using FluentValidation;
+using Notes.Web.Initialization;
 
 namespace Notes.Web.Tests.Initialization;
 
 public sealed class InitializationOptionsTests
 {
     [Fact]
-    public void ThrowsOnNullOptions()
+    public void Ensure_Valid_Cascade_Modes()
     {
-        Assert.Throws<ArgumentNullException>(() => new InitializationOptionsValidation().Validate(null, null!));
+        InitializationOptionsValidator validator = new();
+
+        Assert.Equal(CascadeMode.Continue, validator.ClassLevelCascadeMode);
+        Assert.Equal(CascadeMode.Continue, validator.RuleLevelCascadeMode);
     }
 }

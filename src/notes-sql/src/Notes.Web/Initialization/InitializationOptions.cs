@@ -1,18 +1,16 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Notes.Web.Dependencies.FluentValidation;
 
 namespace Notes.Web.Initialization;
 
 public sealed class InitializationOptions
 {
-    public required bool InitializeOnStartup { get; init; }
+    public bool InitializeOnStartup { get; set; }
 }
 
-public sealed class InitializationOptionsValidation : IValidateOptions<InitializationOptions>
+public sealed class InitializationOptionsValidator : OptionsValidator<InitializationOptions>
 {
-    public ValidateOptionsResult Validate(string? name, InitializationOptions options)
+    public InitializationOptionsValidator() : base()
     {
-        ArgumentNullException.ThrowIfNull(options);
 
-        return ValidateOptionsResult.Success;
     }
 }

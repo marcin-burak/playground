@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  usersstore.web.gateway:
+    image: ${DOCKER_REGISTRY-}usersstorewebgateway
+    build:
+      context: .
+      dockerfile: src/UsersStore.Web.Gateway/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ReverseProxy__Clusters__UsersApi__Destinations__DefaultDestination__Address=http://usersstore.web.api:8080
+    ports:
+      - 5000:8081
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    depends_on:
+      - usersstore.web.api
+  usersstore.web.api:
+    image: ${DOCKER_REGISTRY-}usersstorewebapi
+    build:
+      context: .
+      dockerfile: src/UsersStore.Web.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - 5001:8080
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
