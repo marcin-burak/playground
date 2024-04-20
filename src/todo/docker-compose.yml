@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  todo.web.api:
+    image: ${DOCKER_REGISTRY-}todowebapi
+    build:
+      context: .
+      dockerfile: src/Todo.Web.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - SqlServer__ConnectionString=Server=sqlserver,1433;Database=Todo;User=sa;Password=P@ssw0rd;TrustServerCertificate=true;
+    ports:
+      - 5001:8080
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+    depends_on:
+      - sqlserver
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlvolume:/var/opt/mssql
+volumes:
+  sqlvolume:
