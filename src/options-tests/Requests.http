@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:5000
+
+GET {{baseUrl}}/options
+
+###
+
+GET {{baseUrl}}/options-snapshot
+
+###
+
+GET {{baseUrl}}/options/RedSettings
