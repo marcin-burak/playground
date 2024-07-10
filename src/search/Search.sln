@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6D5DA2D5-7A32-4882-B2F7-30C6EB0C0599}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{575B441F-E2C7-4AA9-A0FA-DABCB7507080}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9D9D5AD4-6CE6-4383-B292-045BF6788F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Search.AzureFunctions", "src\Search.AzureFunctions\Search.AzureFunctions.csproj", "{44D4BC4D-C190-456C-B129-9DCC39DF49A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0BF7C70-0B31-4C99-922B-0B571101E0D7}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{105EF38E-2E5E-4BD0-9D08-ED1D88697EE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44D4BC4D-C190-456C-B129-9DCC39DF49A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D4BC4D-C190-456C-B129-9DCC39DF49A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D4BC4D-C190-456C-B129-9DCC39DF49A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D4BC4D-C190-456C-B129-9DCC39DF49A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105EF38E-2E5E-4BD0-9D08-ED1D88697EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105EF38E-2E5E-4BD0-9D08-ED1D88697EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105EF38E-2E5E-4BD0-9D08-ED1D88697EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105EF38E-2E5E-4BD0-9D08-ED1D88697EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44D4BC4D-C190-456C-B129-9DCC39DF49A6} = {6D5DA2D5-7A32-4882-B2F7-30C6EB0C0599}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3A098AD-E1C7-421E-BCFF-02C90B0B001F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+name: search
+services:
+  azurite:
+    container_name: search-azurite
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    ports:
+      - 10000:10000
+      - 10001:10001
+      - 10002:10002
+    volumes:
+      - vol_azurite:/data
+  azure-functions:
+    container_name: search-azure-functions
+    image: ${DOCKER_REGISTRY-}searchazurefunctions
+    build:
+      context: .
+      dockerfile: src/Search.AzureFunctions/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - AzureWebJobsStorage=UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://azurite;
+    depends_on:
+      - azurite
+  durable-functions-monitor:
+    container_name: search-azure-durable-functions-monitor
+    image: scaletone/durablefunctionsmonitor:6.5
+    environment:
+      - AzureWebJobsStorage=UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://azurite;
+      - DFM_NONCE=i_sure_know_what_i_am_doing
+    ports:
+      - 7072:80
+    depends_on:
+      - azurite
+      - azure-functions
+volumes:
+  vol_azurite:

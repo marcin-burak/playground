@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Docker": {
+      "commandName": "Docker",
+      "DockerfileRunArguments": "--init",
+      "httpPort": 5000,
+      "useSSL": false
+    }
+  }
+}
